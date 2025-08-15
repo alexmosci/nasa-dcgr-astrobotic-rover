@@ -1,2 +1,4 @@
-# nasa-dgcr-astrobotic-rover
-Code for Astrobotic rover and support tools in NASA DGCR mission
+# NASA DGCR Project – Astrobotic Rover Control & Mapping
+
+## Overview
+This repository contains software developed for the NASA Dynamic Ground Coverage Robotics (DGCR) project, providing manual rover control via Bluetooth controller and autonomous navigation along a coverage path. Autonomous navigation is built on elevation map creation from LiDAR data, traversability binary map generation, and coverage path planning.
