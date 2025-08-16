@@ -71,3 +71,19 @@ roslaunch gps_data_to_rover.launch [ip:=<string>] [port:=<int>]
 ```
 
 ## Gallery
+### Elevation Map
+![Elevation Map](assets/elevation_map.png)
+### Binary Map
+![Binary Map](assets/binary_map.png)
+### Cellular Decomposition
+![Cellular Decomposition](assets/cellular_decomposition.png)
+### Coverage Path
+![Coverage Path](assets/coverage_path.png)
+### Before Smoothing / Add Points Smoothing
+![Before Smoothing](assets/smooth_before_smoothing.png)
+### Chaikin Curve Smoothing
+![Chaikin Curve Smoothing](assets/smooth_chaikin_curve.png)
+### Dubins Path Smoothing
+![Dubins Path Smoothing](assets/smooth_dubins_path.png)
+### Turning Radius Smoothing
+![Turning Radius Smoothing](assets/smooth_turning_radius.png)
