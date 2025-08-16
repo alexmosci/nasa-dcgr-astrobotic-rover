@@ -21,10 +21,10 @@ This repository contains software for the Astrobotic rover, developed as part of
 - **cellular_decomposition.py** - Decomposes binary map into cells using BCD and determines efficient traversal order.
 - **coverage_path.py** - Generates full coverage path from cellular decomposition.
 - **scale_coverage_path.py** - Scales coverage path from map units to real-world units.
-- **SmoothAddPoints.py** - Adds intermediate points for pure pursuit without changing path headings.
-- **SmoothChaikinCurve.py** - Smooths path using Chaikin curve algorithm for easier following.
-- **SmoothDubinsPath.py** - Smooths path with Dubins curves, accounting for rover turning radius limits.
-- **SmoothTurningRadius.py** - Smooths path using a general turning radius constraint (non-Dubins method, less reliable).
+- **smooth_add_points.py** - Adds intermediate points for pure pursuit without changing path headings.
+- **smooth_chaikin_curve.py** - Smooths path using Chaikin curve algorithm for easier following.
+- **smooth_dubins_path.py** - Smooths path with Dubins curves, accounting for rover turning radius limits.
+- **smooth_turning_radius.py** - Smooths path using a general turning radius constraint (non-Dubins method, less reliable).
 
 ### Rover Control
 - **controller_skid_steer.py** - Manual skid-steer drive control using PS4 controller on the Astrobotic rover.
@@ -39,7 +39,6 @@ This repository contains software for the Astrobotic rover, developed as part of
 ### Manual Control
 ```
 python controller_skid_steer.py [--no_joystick] [--max_speed <int>]
-
 ```
 
 ### Generate a Coverage Path
@@ -51,11 +50,11 @@ python cellular_decomposition.py <input_csv> <decomposition_csv>
 python coverage_path.py <decomposition_csv> <coverage_path_csv> [--coverage_diameter <float>] [--start <x,y>]
 
 # Smooth the path (required) by selecting one of the methods below:
-# To avoid real smoothing, use SmoothAddPoints.py to densify path instead.
-python SmoothChaikinCurve.py <inputPath> <outputPath>
-python SmoothDubinsPath.py <inputPath> <outputPath> [--turningRadius <float>] [--stepSize <float>] [--threshold <float>]
-python SmoothTurningRadius.py <inputPath> <outputPath> [--turningRadius <float>] [--stepDegree <float>]
-python SmoothAddPoints.py <inputPath> <outputPath> [--spacing <float>]
+# To avoid real smoothing, use smooth_add_points.py to densify path instead.
+python smooth_chaikin_curve.py <input_path> <output_path>
+python smooth_dubins_path.py <input_path> <output_path> [--turning_radius <float>] [--step_size <float>] [--threshold <float>]
+python smooth_turning_radius.py <input_path> <output_path> [--turning_radius <float>] [--step_degree <float>]
+python smooth_add_points.py <input_path> <output_path> [--spacing <float>]
 
 # Scale at the end:
 python scale_coverage_path.py <input_path> <output_path> [--scale <float>|<num>/<num>]
