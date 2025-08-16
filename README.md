@@ -44,30 +44,30 @@ python ControllerSkidSteer.py [--noJoystick] [--maxSpeed <int>]
 ### Generate a Coverage Path
 ```
 # Start from a PLY mesh:
-python PlyToElevationMap.py <inputPly> <outputCsv> [--resolution <int>] [--elevationAxis {x,y,z}] [--smoothPasses <int>]
+python PlyToElevationMap.py <inputPly> <outputCsv> [--resolution <int>] [--elevationAxis {x|y|z}] [--smoothPasses <int>]
 python ElevationToBinaryMap.py <inputCsv> <outputCsv> [--threshold <float>] [--smoothPasses <int>]
-python CellularDecomposition.py
-python CoveragePath.py
+python CellularDecomposition.py <inputCsv> <decompositionCsv>
+python CoveragePath.py <decompositionCsv> <coveragePathCsv> [--coverageDiameter <float>] [--start <x,y>]
 
 # To avoid real smoothing, use SmoothAddPoints.py to densify path instead:
-python SmoothChaikinCurve.py
+python SmoothChaikinCurve.py <inputPath> <outputPath>
 # or
-python SmoothDubinsPath.py
+python SmoothDubinsPath.py <inputPath> <outputPath> [--turningRadius <float>] [--stepSize <float>] [--threshold <float>]
 # or
-python SmoothTurningRadius.py
+python SmoothTurningRadius.py <inputPath> <outputPath> [--turningRadius <float>] [--stepDegree <float>]
 # or
-python SmoothAddPoints.py
+python SmoothAddPoints.py <inputPath> <outputPath> [--spacing <float>]
 
 # Scale at the end:
-python ScaleCoveragePath.py
+python ScaleCoveragePath.py <inputPath> <outputPath> [--scale <float>|<num>/<num>]
 ```
 
 ### Autonomous Path Tracking
 ```
-python PathTrackingPosition.py
+python PathTrackingPosition.py <inputPath> [--maxSpeed <int>] [--timeStep <float>] [--start <x,y>] [--startHeading <float>] [--port <int>]
 # or
-python PathTrackingIMU.py
+python PathTrackingIMU.py <inputPath> [--maxSpeed <int>] [--timeStep <float>] [--start <x,y>] [--startHeading <float>]
 
 # GPS bridge if needed:
-roslaunch gps_data_to_rover.launch
+roslaunch gps_data_to_rover.launch [ip:=<string>] [port:=<int>]
 ```
