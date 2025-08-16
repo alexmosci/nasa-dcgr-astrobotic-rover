@@ -49,13 +49,11 @@ python ElevationToBinaryMap.py <inputCsv> <outputCsv> [--threshold <float>] [--s
 python CellularDecomposition.py <inputCsv> <decompositionCsv>
 python CoveragePath.py <decompositionCsv> <coveragePathCsv> [--coverageDiameter <float>] [--start <x,y>]
 
-# To avoid real smoothing, use SmoothAddPoints.py to densify path instead:
+# Smooth the path (required), select one of the methods below:
+# To avoid real smoothing, use SmoothAddPoints.py to densify path instead.
 python SmoothChaikinCurve.py <inputPath> <outputPath>
-# or
 python SmoothDubinsPath.py <inputPath> <outputPath> [--turningRadius <float>] [--stepSize <float>] [--threshold <float>]
-# or
 python SmoothTurningRadius.py <inputPath> <outputPath> [--turningRadius <float>] [--stepDegree <float>]
-# or
 python SmoothAddPoints.py <inputPath> <outputPath> [--spacing <float>]
 
 # Scale at the end:
@@ -71,3 +69,5 @@ python PathTrackingIMU.py <inputPath> [--maxSpeed <int>] [--timeStep <float>] [-
 # GPS bridge if needed:
 roslaunch gps_data_to_rover.launch [ip:=<string>] [port:=<int>]
 ```
+
+## Gallery
