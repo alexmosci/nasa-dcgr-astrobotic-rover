@@ -80,3 +80,69 @@ roslaunch gps_data_to_rover.launch [ip:=<string>] [port:=<int>]
 | Unsmoothed Path / Add Points | Chaikin Curve | Dubins Path | Turning Radius |
 | --- | --- | --- | --- |
 | ![Unsmoothed Path / Add Points](assets/smooth_unsmoothed_path.png) | ![Chaikin Curve](assets/smooth_chaikin_curve.png) | ![Dubins Path](assets/smooth_dubins_path.png) | ![Turning Radius](assets/smooth_turning_radius.png) |
+
+## Gallery
+
+### Pipeline
+<table>
+  <tr>
+    <td align="center">
+      <figure>
+        <img src="assets/elevation_map.png" width="45%"/>
+        <figcaption>Elevation Map</figcaption>
+      </figure>
+    </td>
+    <td align="center">
+      <figure>
+        <img src="assets/binary_map.png" width="45%"/>
+        <figcaption>Binary Map</figcaption>
+      </figure>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <figure>
+        <img src="assets/cellular_decomposition.png" width="45%"/>
+        <figcaption>Cellular Decomposition</figcaption>
+      </figure>
+    </td>
+    <td align="center">
+      <figure>
+        <img src="assets/coverage_path.png" width="45%"/>
+        <figcaption>Coverage Path</figcaption>
+      </figure>
+    </td>
+  </tr>
+</table>
+
+### Smoothing
+<table>
+  <tr>
+    <td align="center">
+      <figure>
+        <img src="assets/smooth_unsmoothed_path.png" width="45%"/>
+        <figcaption>Unsmoothed Path / Add Points</figcaption>
+      </figure>
+    </td>
+    <td align="center">
+      <figure>
+        <img src="assets/smooth_chaikin_curve.png" width="45%"/>
+        <figcaption>Chaikin Curve</figcaption>
+      </figure>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <figure>
+        <img src="assets/smooth_dubins_path.png" width="45%"/>
+        <figcaption>Dubins Path</figcaption>
+      </figure>
+    </td>
+    <td align="center">
+      <figure>
+        <img src="assets/smooth_turning_radius.png" width="45%"/>
+        <figcaption>Turning Radius</figcaption>
+      </figure>
+    </td>
+  </tr>
+</table>
