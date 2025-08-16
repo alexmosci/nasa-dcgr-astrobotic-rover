@@ -38,14 +38,14 @@ This repository contains software for the Astrobotic rover, developed as part of
 ## Usage
 ### Manual Control
 ```
-python ControllerSkidSteer.py
+python ControllerSkidSteer.py [--noJoystick] [--maxSpeed <int>]
 ```
 
 ### Generate a Coverage Path
 ```
 # Start from a PLY mesh:
-python PlyToElevationMap.py
-python ElevationToBinaryMap.py
+python PlyToElevationMap.py <inputPly> <outputCsv> [--resolution <int>] [--elevationAxis {x,y,z}] [--smoothPasses <int>]
+python ElevationToBinaryMap.py <inputCsv> <outputCsv> [--threshold <float>] [--smoothPasses <int>]
 python CellularDecomposition.py
 python CoveragePath.py
 
