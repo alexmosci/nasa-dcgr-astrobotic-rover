@@ -72,18 +72,6 @@ roslaunch gps_data_to_rover.launch [ip:=<string>] [port:=<int>]
 
 ## Gallery
 ### Pipeline
-| Elevation Map | Binary Map | Cellular Decomposition | Coverage Path |
-| --- | --- | --- | --- |
-| ![Elevation Map](assets/elevation_map.png) | ![Binary Map](assets/binary_map.png) | ![Cellular Decomposition](assets/cellular_decomposition.png) | ![Coverage Path](assets/coverage_path.png) |
-
-### Smoothing
-| Unsmoothed Path / Add Points | Chaikin Curve | Dubins Path | Turning Radius |
-| --- | --- | --- | --- |
-| ![Unsmoothed Path / Add Points](assets/smooth_unsmoothed_path.png) | ![Chaikin Curve](assets/smooth_chaikin_curve.png) | ![Dubins Path](assets/smooth_dubins_path.png) | ![Turning Radius](assets/smooth_turning_radius.png) |
-
-## Gallery
-
-### Pipeline
 <table>
   <tr>
     <th align="center">Elevation Map</th>
