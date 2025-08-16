@@ -71,6 +71,10 @@ roslaunch gps_data_to_rover.launch [ip:=<string>] [port:=<int>]
 ```
 
 ## Gallery
+### Pipeline
+| Elevation Map | Binary Map | Cellular Decomposition | Coverage Path |
+| --- | --- | --- | --- |
+| ![Elevation Map](assets/elevation_map.png) | ![Binary Map](assets/binary_map.png) | ![Coverage Path](assets/coverage_path.png) | ![Unsmoothed Path / Add Points Smoothing](assets/smooth_unsmoothed_path.png) |
 ### Elevation Map
 ![Elevation Map](assets/elevation_map.png)
 ### Binary Map
