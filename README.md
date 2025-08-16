@@ -86,31 +86,23 @@ roslaunch gps_data_to_rover.launch [ip:=<string>] [port:=<int>]
 ### Pipeline
 <table>
   <tr>
-    <td align="center">
-      <figure>
-        <img src="assets/elevation_map.png" width="45%"/>
-        <figcaption>Elevation Map</figcaption>
-      </figure>
+    <td width="50%" align="center">
+      <b>Elevation Map</b><br/>
+      <img src="assets/elevation_map.png" height="220"/>
     </td>
-    <td align="center">
-      <figure>
-        <img src="assets/binary_map.png" width="45%"/>
-        <figcaption>Binary Map</figcaption>
-      </figure>
+    <td width="50%" align="center">
+      <b>Binary Map</b><br/>
+      <img src="assets/binary_map.png" height="220"/>
     </td>
   </tr>
   <tr>
-    <td align="center">
-      <figure>
-        <img src="assets/cellular_decomposition.png" width="45%"/>
-        <figcaption>Cellular Decomposition</figcaption>
-      </figure>
+    <td width="50%" align="center">
+      <b>Cellular Decomposition</b><br/>
+      <img src="assets/cellular_decomposition.png" height="220"/>
     </td>
-    <td align="center">
-      <figure>
-        <img src="assets/coverage_path.png" width="45%"/>
-        <figcaption>Coverage Path</figcaption>
-      </figure>
+    <td width="50%" align="center">
+      <b>Coverage Path</b><br/>
+      <img src="assets/coverage_path.png" height="220"/>
     </td>
   </tr>
 </table>
@@ -118,31 +110,23 @@ roslaunch gps_data_to_rover.launch [ip:=<string>] [port:=<int>]
 ### Smoothing
 <table>
   <tr>
-    <td align="center">
-      <figure>
-        <img src="assets/smooth_unsmoothed_path.png" width="45%"/>
-        <figcaption>Unsmoothed Path / Add Points</figcaption>
-      </figure>
+    <td width="50%" align="center">
+      <b>Unsmoothed Path / Add Points</b><br/>
+      <img src="assets/smooth_unsmoothed_path.png" height="180"/>
     </td>
-    <td align="center">
-      <figure>
-        <img src="assets/smooth_chaikin_curve.png" width="45%"/>
-        <figcaption>Chaikin Curve</figcaption>
-      </figure>
+    <td width="50%" align="center">
+      <b>Chaikin Curve</b><br/>
+      <img src="assets/smooth_chaikin_curve.png" height="180"/>
     </td>
   </tr>
   <tr>
-    <td align="center">
-      <figure>
-        <img src="assets/smooth_dubins_path.png" width="45%"/>
-        <figcaption>Dubins Path</figcaption>
-      </figure>
+    <td width="50%" align="center">
+      <b>Dubins Path</b><br/>
+      <img src="assets/smooth_dubins_path.png" height="180"/>
     </td>
-    <td align="center">
-      <figure>
-        <img src="assets/smooth_turning_radius.png" width="45%"/>
-        <figcaption>Turning Radius</figcaption>
-      </figure>
+    <td width="50%" align="center">
+      <b>Turning Radius</b><br/>
+      <img src="assets/smooth_turning_radius.png" height="180"/>
     </td>
   </tr>
 </table>
