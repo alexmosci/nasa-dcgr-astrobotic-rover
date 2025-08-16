@@ -27,13 +27,28 @@ This repository contains software for the Astrobotic rover, developed as part of
 - **smooth_turning_radius.py** - Smooths path using a general turning radius constraint (non-Dubins method, less reliable).
 
 ### Rover Control
-- **controller_skid_steer.py** - Manual skid-steer drive control using PS4 controller on the Astrobotic rover.
+- **controller_skid_steer.py** - Manual skid-steer drive control using a PS4 controller on the Astrobotic rover.
 
 ### Path Tracking
 - **path_tracking_position.py** - Position-based path tracking that works with any source providing `(x,y,heading)` in a consistent frame (e.g., camera, GPS, other adaptable sensors).
 - **path_tracking_imu.py** - IMU-based path tracking using onboard sensors on the Astrobotic rover (less accurate).
 - **gps_data_to_rover.py** - Sends GPS position data over netcat to the rover from the Jetson.
 - **gps_data_to_rover.launch** - Launches `gps_data_to_rover.py`.
+
+#### Heading Conventions
+By default, heading inputs are converted from compass convention (0° = North, CW+) to math convention (0 = +X, CCW+). Edit this conversion if your input uses a different heading format.
+
+```
+cameraHeading = compassDegToMathRad(float(headingStr))
+```
+
+#### Parameters
+The following constants can be tuned in path tracking code:
+- **LOOKAHEAD_DISTANCE** - Pure pursuit lookahead distancem. Larger values smooth turns but reduce accuracy.
+- **TURN_GAIN** - Controls turning aggressiveness. Increase if the rover understeers due to skid.
+- **ADAPTIVE_SPEED_SCALE** - Scales how much speed is maintained in turns. Higher values allow tighter turns at higher speeds.
+- **ADAPTIVE_SPEED_MIN** - Minimum speed when navigating the tightest turns.
+- **ROVER_TRACK_WIDTH** - Width of the rover. For the Astrobotic rover with default wheels, this is 0.34 m.
 
 ## Usage
 ### Manual Control
@@ -149,5 +164,4 @@ Each path starts at the top-left corner.
       <img src="assets/smooth_turning_radius.png" width="100%"/>
     </td>
   </tr>
-</table>
 </table>
