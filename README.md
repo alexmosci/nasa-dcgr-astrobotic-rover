@@ -79,8 +79,8 @@ roslaunch gps_data_to_rover.launch [ip:=<string>] [port:=<int>]
 ![Cellular Decomposition](assets/cellular_decomposition.png)
 ### Coverage Path
 ![Coverage Path](assets/coverage_path.png)
-### Before Smoothing / Add Points Smoothing
-![Before Smoothing](assets/smooth_before_smoothing.png)
+### Unsmoothed Path / Add Points Smoothing
+![Unsmoothed Path / Add Points Smoothing](assets/smooth_unsmoothed_path.png)
 ### Chaikin Curve Smoothing
 ![Chaikin Curve Smoothing](assets/smooth_chaikin_curve.png)
 ### Dubins Path Smoothing
