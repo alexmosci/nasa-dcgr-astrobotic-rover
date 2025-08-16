@@ -72,10 +72,10 @@ roslaunch gps_data_to_rover.launch [ip:=<string>] [port:=<int>]
 
 ### Example Coverage Paths
 Four example coverage paths are provided in the `examples/` folder for testing the path tracking modules:
-- `coverage_path_small_square.csv` – 2.5m × 2.5m square
-- `coverage_path_large_square.csv` – 5m × 5m square
-- `coverage_path_small_h.csv` – 3.5m × 1.5m sideways H
-- `coverage_path_large_h.csv` – 7m × 3m sideways H
+- `coverage_path_small_square.csv` - 2.5m × 2.5m square
+- `coverage_path_large_square.csv` - 5m × 5m square
+- `coverage_path_small_h.csv` - 3.5m × 1.5m sideways H
+- `coverage_path_large_h.csv` - 7m × 3m sideways H
 
 Each path starts at the top-left corner.
 
