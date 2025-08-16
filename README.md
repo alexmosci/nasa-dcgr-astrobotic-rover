@@ -1,13 +1,13 @@
 # NASA DGCR Project - Astrobotic Rover Control & Mapping
 
 ## Overview
-This repository contains software for the Astrobotic rover, developed as part of the NASA Dynamic Ground Coverage Robotics (DGCR) project, providing manual rover control via Bluetooth controller and autonomous navigation along a coverage path. It includes all components needed for autonomous operation, such as elevation map creation from LiDAR data, traversability binary map generation, and coverage path planning.
+This repository contains software for the Astrobotic rover, developed as part of the NASA Dynamic Ground Coverage Robotics (DGCR) project, providing manual rover control via a Bluetooth controller and autonomous navigation along a coverage path. It includes all components needed for autonomous operation, such as elevation map creation from LiDAR data, traversability binary map generation, and coverage path planning.
 
 ## Features
 - **Manual Control** - Skid-steer driving with PS4 controller input.
 - **Autonomous Control** - Drives the rover along generated coverage paths through map-based navigation.
 - **Mapping** - Generates elevation maps and binary traversability maps from LiDAR scans.
-- **Coverage Path Plannign** - Uses boustrophedon cellular decomposition (BCD) to create lawnmower style paths for full coverage of an area.
+- **Coverage Path Planning** - Uses boustrophedon cellular decomposition (BCD) to create lawnmower style paths for full coverage of an area.
 - **Path Tracking** - Pure pursuit algorithm that follows waypoints using position data from camera, GPS, or IMU.
 
 ## Code Modules
@@ -24,15 +24,15 @@ This repository contains software for the Astrobotic rover, developed as part of
 - **SmoothAddPoints.py** - Adds intermediate points for pure pursuit without changing path headings.
 - **SmoothChaikinCurve.py** - Smooths path using Chaikin curve algorithm for easier following.
 - **SmoothDubinsPath.py** - Smooths path with Dubins curves, accounting for rover turning radius limits.
-- **SmoothTurningRadius.py** - Smooths path using general turning radius constraint (non-Dubins method).
+- **SmoothTurningRadius.py** - Smooths path using a general turning radius constraint (non-Dubins method, less reliable).
 
 ### Rover Control
 - **ControllerSkidSteer.py** - Manual skid-steer drive control using PS4 controller on the Astrobotic rover.
 
 ### Path Tracking
-- **PathTrackingPosition.py** - Position-based path tracking that works with nay source pproviding `(x,y,heading)` in a consistent frame (e.g., camera, GPS, other adaptable sensors).
+- **PathTrackingPosition.py** - Position-based path tracking that works with any source providing `(x,y,heading)` in a consistent frame (e.g., camera, GPS, other adaptable sensors).
 - **PathTrackingIMU.py** - IMU-based path tracking using onboard sensors on the Astrobotic rover (less accurate).
-- **GPSDataToRover.py** - Sends GPS position data over netcat to the rover from Jetson.
+- **GPSDataToRover.py** - Sends GPS position data over netcat to the rover from the Jetson.
 - **gps_data_to_rover.launch** - Launches `GPSDataToRover.py`.
 
 ## Usage
@@ -49,7 +49,7 @@ python ElevationToBinaryMap.py <inputCsv> <outputCsv> [--threshold <float>] [--s
 python CellularDecomposition.py <inputCsv> <decompositionCsv>
 python CoveragePath.py <decompositionCsv> <coveragePathCsv> [--coverageDiameter <float>] [--start <x,y>]
 
-# Smooth the path (required), select one of the methods below:
+# Smooth the path (required) by selecting one of the methods below:
 # To avoid real smoothing, use SmoothAddPoints.py to densify path instead.
 python SmoothChaikinCurve.py <inputPath> <outputPath>
 python SmoothDubinsPath.py <inputPath> <outputPath> [--turningRadius <float>] [--stepSize <float>] [--threshold <float>]
