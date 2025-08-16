@@ -70,6 +70,29 @@ python PathTrackingIMU.py <inputPath> [--maxSpeed <int>] [--timeStep <float>] [-
 roslaunch gps_data_to_rover.launch [ip:=<string>] [port:=<int>]
 ```
 
+### Example Coverage Paths
+Four example coverage paths are provided in the `examples/` folder for testing the path tracking modules:
+Each path starts at the top-left corner.
+- `coverage_path_small_square.csv` – 2.5m × 2.5m square
+- `coverage_path_large_square.csv` – 5m × 5m square
+- `coverage_path_small_h.csv` – 3.5m × 1.5m sideways H
+- `coverage_path_large_h.csv` – 7m × 3m sideways H
+
+<table>
+  <tr>
+    <th align="center">Square Coverage Path</th>
+    <th align="center">Sideways H Coverage Path</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <img src="assets/example_coverage_path_square.png" width="100%"/>
+    </td>
+    <td width="50%" align="center">
+      <img src="assets/example_coverage_path_h.png" width="100%"/>
+    </td>
+  </tr>
+</table>
+
 ## Gallery
 ### Pipeline
 <table>
