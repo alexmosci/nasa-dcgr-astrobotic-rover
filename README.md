@@ -13,14 +13,14 @@ This repository contains software for the Astrobotic rover, developed as part of
 ## Code Modules
 ### Mapping & Conversion
 - **blank_binary_map.py** - Creates an empty binary map of given dimensions.
-- **PlyToElevationMap.py** - Generates an elevation map from a PLY mesh.
+- **ply_to_elevation_map.py** - Generates an elevation map from a PLY mesh.
 - **elevation_map_to_ply.py** - Converts an elevation map back into a PLY mesh.
-- **ElevationToBinaryMap.py** - Converts an elevation map into a binary map based on the rover's ability to traverse terrain.
+- **elevation_to_binary_map.py** - Converts an elevation map into a binary map based on the rover's ability to traverse terrain.
 
 ### Path Planning
 - **cellular_decomposition.py** - Decomposes binary map into cells using BCD and determines efficient traversal order.
 - **coverage_path.py** - Generates full coverage path from cellular decomposition.
-- **ScaleCoveragePath.py** - Scales coverage path from map units to real-world units.
+- **scale_coverage_path.py** - Scales coverage path from map units to real-world units.
 - **SmoothAddPoints.py** - Adds intermediate points for pure pursuit without changing path headings.
 - **SmoothChaikinCurve.py** - Smooths path using Chaikin curve algorithm for easier following.
 - **SmoothDubinsPath.py** - Smooths path with Dubins curves, accounting for rover turning radius limits.
@@ -30,10 +30,10 @@ This repository contains software for the Astrobotic rover, developed as part of
 - **controller_skid_steer.py** - Manual skid-steer drive control using PS4 controller on the Astrobotic rover.
 
 ### Path Tracking
-- **PathTrackingPosition.py** - Position-based path tracking that works with any source providing `(x,y,heading)` in a consistent frame (e.g., camera, GPS, other adaptable sensors).
-- **PathTrackingIMU.py** - IMU-based path tracking using onboard sensors on the Astrobotic rover (less accurate).
-- **GPSDataToRover.py** - Sends GPS position data over netcat to the rover from the Jetson.
-- **gps_data_to_rover.launch** - Launches `GPSDataToRover.py`.
+- **path_tracking_position.py** - Position-based path tracking that works with any source providing `(x,y,heading)` in a consistent frame (e.g., camera, GPS, other adaptable sensors).
+- **path_tracking_imu.py** - IMU-based path tracking using onboard sensors on the Astrobotic rover (less accurate).
+- **gps_data_to_rover.py** - Sends GPS position data over netcat to the rover from the Jetson.
+- **gps_data_to_rover.launch** - Launches `gps_data_to_rover.py`.
 
 ## Usage
 ### Manual Control
@@ -45,7 +45,7 @@ python controller_skid_steer.py [--no_joystick] [--max_speed <int>]
 ### Generate a Coverage Path
 ```
 # Start from a PLY mesh:
-python PlyToElevationMap.py <inputPly> <outputCsv> [--resolution <int>] [--elevationAxis {x|y|z}] [--smoothPasses <int>]
+python ply_to_elevation_map.py <input_ply> <output_csv> [--resolution <int>] [--elevation_axis {x|y|z}] [--smooth_passes <int>]
 python elevation_to_binary_map.py <input_csv> <output_csv> [--threshold <float>] [--smooth_passes <int>]
 python cellular_decomposition.py <input_csv> <decomposition_csv>
 python coverage_path.py <decomposition_csv> <coverage_path_csv> [--coverage_diameter <float>] [--start <x,y>]
@@ -58,14 +58,14 @@ python SmoothTurningRadius.py <inputPath> <outputPath> [--turningRadius <float>]
 python SmoothAddPoints.py <inputPath> <outputPath> [--spacing <float>]
 
 # Scale at the end:
-python ScaleCoveragePath.py <inputPath> <outputPath> [--scale <float>|<num>/<num>]
+python scale_coverage_path.py <input_path> <output_path> [--scale <float>|<num>/<num>]
 ```
 
 ### Autonomous Path Tracking
 ```
-python PathTrackingPosition.py <inputPath> [--maxSpeed <int>] [--timeStep <float>] [--start <x,y>] [--startHeading <float>] [--port <int>]
+python path_tracking_position.py <coverage_path> [--max_speed <int>] [--time_step <float>] [--start <x,y>] [--start_heading <float>] [--port <int>]
 # or
-python PathTrackingIMU.py <inputPath> [--maxSpeed <int>] [--timeStep <float>] [--start <x,y>] [--startHeading <float>]
+python path_tracking_imu.py <coverage_path> [--max_speed <int>] [--time_step <float>] [--start <x,y>] [--start_heading <float>]
 
 # GPS bridge if needed:
 roslaunch gps_data_to_rover.launch [ip:=<string>] [port:=<int>]
