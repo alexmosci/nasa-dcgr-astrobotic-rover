@@ -1,0 +1,9 @@
+<launch>
+    <arg name="ip" default=""/>
+    <arg name="port" default=""/>
+
+    <node name="gps_data_to_rover" pkg="mavros" type="gps_data_to_rover.py" output="screen">
+        <param if="$(eval arg('ip') != '')" name="ip_address" value="$(arg ip)"/>
+        <param if="$(eval arg('port') != '')" name="port_number" value="$(arg port)"/>
+    </node>
+</launch>
