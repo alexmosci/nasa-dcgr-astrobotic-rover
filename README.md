@@ -12,14 +12,14 @@ This repository contains software for the Astrobotic rover, developed as part of
 
 ## Code Modules
 ### Mapping & Conversion
-- **BlankBinaryMap.py** - Creates an empty binary map of given dimensions.
+- **blank_binary_map.py** - Creates an empty binary map of given dimensions.
 - **PlyToElevationMap.py** - Generates an elevation map from a PLY mesh.
-- **ElevationMapToPly.py** - Converts an elevation map back into a PLY mesh.
+- **elevation_map_to_ply.py** - Converts an elevation map back into a PLY mesh.
 - **ElevationToBinaryMap.py** - Converts an elevation map into a binary map based on the rover's ability to traverse terrain.
 
 ### Path Planning
-- **CellularDecomposition.py** - Decomposes binary map into cells using BCD and determines efficient traversal order.
-- **CoveragePath.py** - Generates full coverage path from cellular decomposition.
+- **cellular_decomposition.py** - Decomposes binary map into cells using BCD and determines efficient traversal order.
+- **coverage_path.py** - Generates full coverage path from cellular decomposition.
 - **ScaleCoveragePath.py** - Scales coverage path from map units to real-world units.
 - **SmoothAddPoints.py** - Adds intermediate points for pure pursuit without changing path headings.
 - **SmoothChaikinCurve.py** - Smooths path using Chaikin curve algorithm for easier following.
@@ -27,7 +27,7 @@ This repository contains software for the Astrobotic rover, developed as part of
 - **SmoothTurningRadius.py** - Smooths path using a general turning radius constraint (non-Dubins method, less reliable).
 
 ### Rover Control
-- **ControllerSkidSteer.py** - Manual skid-steer drive control using PS4 controller on the Astrobotic rover.
+- **controller_skid_steer.py** - Manual skid-steer drive control using PS4 controller on the Astrobotic rover.
 
 ### Path Tracking
 - **PathTrackingPosition.py** - Position-based path tracking that works with any source providing `(x,y,heading)` in a consistent frame (e.g., camera, GPS, other adaptable sensors).
@@ -38,16 +38,17 @@ This repository contains software for the Astrobotic rover, developed as part of
 ## Usage
 ### Manual Control
 ```
-python ControllerSkidSteer.py [--noJoystick] [--maxSpeed <int>]
+python controller_skid_steer.py [--no_joystick] [--max_speed <int>]
+
 ```
 
 ### Generate a Coverage Path
 ```
 # Start from a PLY mesh:
 python PlyToElevationMap.py <inputPly> <outputCsv> [--resolution <int>] [--elevationAxis {x|y|z}] [--smoothPasses <int>]
-python ElevationToBinaryMap.py <inputCsv> <outputCsv> [--threshold <float>] [--smoothPasses <int>]
-python CellularDecomposition.py <inputCsv> <decompositionCsv>
-python CoveragePath.py <decompositionCsv> <coveragePathCsv> [--coverageDiameter <float>] [--start <x,y>]
+python elevation_to_binary_map.py <input_csv> <output_csv> [--threshold <float>] [--smooth_passes <int>]
+python cellular_decomposition.py <input_csv> <decomposition_csv>
+python coverage_path.py <decomposition_csv> <coverage_path_csv> [--coverage_diameter <float>] [--start <x,y>]
 
 # Smooth the path (required) by selecting one of the methods below:
 # To avoid real smoothing, use SmoothAddPoints.py to densify path instead.
