@@ -310,7 +310,7 @@ def main():
     traversalOrder = loadTraversalOrder(orderCsv)
     binaryMap = loadBinaryMap(binaryCsv)
 
-    binaryOutput = args.coverage_path_csv.rsplit(".csv", 1)[0] + "_Binary.csv"
+    binaryOutput = args.coverage_path_csv.rsplit(".csv", 1)[0] + "_binary.csv"
     np.savetxt(binaryOutput, binaryMap, fmt="%d", delimiter=",")
     print(f"Binary map saved to: {binaryOutput}")
 
@@ -324,4 +324,5 @@ def main():
     print(f"Coverage path saved to: {outputCsv}")
 
 if __name__ == "__main__":
+
     main()
