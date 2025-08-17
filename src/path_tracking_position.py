@@ -90,7 +90,6 @@ def startCameraServer(host, port):
                         with cameraLock:
                             cameraX = float(xStr)
                             cameraY = float(yStr)
-                            # Edit based on input heading format (compass: 0°=N, CW+ vs math: 0=+X, CCW+)
                             cameraHeading = compassDegToMathRad(float(headingStr))
                             
                             if not cameraReady.is_set():
