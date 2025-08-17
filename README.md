@@ -20,7 +20,6 @@ This repository contains software for the Astrobotic rover, developed as part of
 ### Path Planning
 - **cellular_decomposition.py** - Decomposes binary map into cells using BCD and determines efficient traversal order.
 - **coverage_path.py** - Generates full coverage path from cellular decomposition.
-- **flip_coverage_path.py** - Fixes mirrored coverage path based on binary map dimensions.
 - **scale_coverage_path.py** - Scales coverage path from map units to real-world units.
 - **smooth_add_points.py** - Adds intermediate points for pure pursuit without changing path headings.
 - **smooth_chaikin_curve.py** - Smooths path using Chaikin curve algorithm for easier following.
@@ -72,8 +71,7 @@ python smooth_dubins_path.py <input_path> <output_path> [--turning_radius <float
 python smooth_turning_radius.py <input_path> <output_path> [--turning_radius <float>] [--step_degree <float>]
 python smooth_add_points.py <input_path> <output_path> [--spacing <float>]
 
-# Finalize the coverage path:
-python flip_coverage_path.py <input_path> <output_path> [--dimensions <x,y>]
+# Finally, scale the coverage path:
 python scale_coverage_path.py <input_path> <output_path> [--scale <float>|<float>/<float>]
 ```
 
