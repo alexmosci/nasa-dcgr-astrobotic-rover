@@ -86,7 +86,7 @@ def fillInteriorIslands(binary):
 def visualizeBinaryMap(binaryMap, outputPath):
     plt.figure(figsize=(10, 8))
     cmap = plt.get_cmap('gray_r')
-    plt.imshow(binaryMap, cmap=cmap, origin='lower')
+    plt.imshow(binaryMap, cmap=cmap, origin='upper')
     plt.title("Binary Traversability Map (0 = go, 1 = wall)")
     plt.axis('off')
     pngPath = outputPath.replace('.csv', '.png')

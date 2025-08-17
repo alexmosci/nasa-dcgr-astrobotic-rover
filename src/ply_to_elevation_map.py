@@ -166,7 +166,7 @@ def savePng(grid, outputCsvPath):
     cmap.set_bad(color='white')
 
     maskedGrid = np.ma.masked_invalid(grid)
-    plt.imshow(maskedGrid, cmap=cmap, origin='lower')
+    plt.imshow(maskedGrid, cmap=cmap, origin='upper')
     plt.colorbar(label='Elevation')
     plt.title("Elevation Map")
     plt.axis('off')
@@ -207,6 +207,7 @@ def main():
     grid = smoothGrid(grid, passes=args.smooth_passes)
     grid = maskEdgeConnectedZeros(grid)
     grid = patchCorners(grid)
+    grid = np.flipud(grid)
 
     saveToCsv(grid, args.output_csv)
     savePng(grid, args.output_csv)
