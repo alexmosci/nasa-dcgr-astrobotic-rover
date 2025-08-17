@@ -71,7 +71,7 @@ python smooth_dubins_path.py <input_path> <output_path> [--turning_radius <float
 python smooth_turning_radius.py <input_path> <output_path> [--turning_radius <float>] [--step_degree <float>]
 python smooth_add_points.py <input_path> <output_path> [--spacing <float>]
 
-# Finally, scale the coverage path:
+# Scale the coverage path:
 python scale_coverage_path.py <input_path> <output_path> [--scale <float>|<float>/<float>]
 ```
 
