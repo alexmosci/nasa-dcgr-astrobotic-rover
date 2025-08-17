@@ -48,7 +48,7 @@ The following constants can be tuned in path tracking code:
 - **TURN_GAIN** - Controls turning aggressiveness. Increase if the rover understeers due to skid.
 - **ADAPTIVE_SPEED_SCALE** - Scales how much speed is maintained in turns. Higher values allow tighter turns at higher speeds.
 - **ADAPTIVE_SPEED_MIN** - Minimum speed when navigating the tightest turns.
-- **ROVER_TRACK_WIDTH** - Width of the rover. For the Astrobotic rover with default wheels, this is 0.34 m.
+- **ROVER_TRACK_WIDTH** - Track width of the rover. For the Astrobotic rover with default wheels, this is 0.34 m.
 
 ## Usage
 ### Manual Control
