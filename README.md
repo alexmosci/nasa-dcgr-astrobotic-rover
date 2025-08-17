@@ -44,11 +44,11 @@ cameraHeading = compassDegToMathRad(float(headingStr))
 
 #### Parameters
 The following constants can be tuned in path tracking code:
-- **LOOKAHEAD_DISTANCE** - Pure pursuit lookahead distance. Larger values smooth turns but reduce accuracy.
-- **TURN_GAIN** - Controls turning aggressiveness. Increase if the rover understeers due to skid.
-- **ADAPTIVE_SPEED_SCALE** - Scales how much speed is maintained in turns. Higher values allow tighter turns at higher speeds.
-- **ADAPTIVE_SPEED_MIN** - Minimum speed when navigating the tightest turns.
-- **ROVER_TRACK_WIDTH** - Track width of the rover. For the Astrobotic rover with default wheels, this is 0.34 m.
+- **LOOKAHEAD_DISTANCE** - Pure pursuit lookahead distance in meters. Larger values smooth turns but reduce accuracy.
+- **TURN_GAIN** - Factor that controls turning aggressiveness. Use higher values if the rover understeers due to skid.
+- **ADAPTIVE_SPEED_SCALE** - Scalining factor for how much speed is maintained in turns. Higher values allow higher speeds for tight turns.
+- **ADAPTIVE_SPEED_MIN** - Minimum speed factor when navigating the tightest turns.
+- **ROVER_TRACK_WIDTH** - Track width of the rover in meters. For the Astrobotic rover with default wheels, this is 0.34 m.
 
 ## Usage
 ### Manual Control
