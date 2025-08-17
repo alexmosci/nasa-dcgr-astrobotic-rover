@@ -9,6 +9,7 @@ import networkx as nx
 def loadBinaryMap(inputCsv):
     raw = np.genfromtxt(inputCsv, delimiter=',', dtype=str)
     binary = np.array([[1 if val.strip().lower() == 'nan' else int(float(val)) for val in row] for row in raw])
+    binary = np.flipud(binary)
 
     if binary.shape[0] > binary.shape[1]:
         binary = np.rot90(binary, k=-1)
@@ -295,4 +296,5 @@ def main():
     print(f"Traversal order saved to: {traversalOrderPath}")
 
 if __name__ == "__main__":
+
     main()
