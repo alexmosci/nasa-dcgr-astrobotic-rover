@@ -106,7 +106,6 @@ def generateFillet(prevPoint, currPoint, nextPoint, radius, stepDegree):
     return arcPoints
 
 def extendArc(arcPoints, radius, stepDegree, numExtraPoints=20):
-    # Need at least three points to estimate circle center
     if len(arcPoints) < 3:
         return arcPoints
     x1, y1, _ = arcPoints[-3]
