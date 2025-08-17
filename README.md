@@ -44,7 +44,7 @@ cameraHeading = compassDegToMathRad(float(headingStr))
 
 #### Parameters
 The following constants can be tuned in path tracking code:
-- **LOOKAHEAD_DISTANCE** - Pure pursuit lookahead distancem. Larger values smooth turns but reduce accuracy.
+- **LOOKAHEAD_DISTANCE** - Pure pursuit lookahead distance. Larger values smooth turns but reduce accuracy.
 - **TURN_GAIN** - Controls turning aggressiveness. Increase if the rover understeers due to skid.
 - **ADAPTIVE_SPEED_SCALE** - Scales how much speed is maintained in turns. Higher values allow tighter turns at higher speeds.
 - **ADAPTIVE_SPEED_MIN** - Minimum speed when navigating the tightest turns.
