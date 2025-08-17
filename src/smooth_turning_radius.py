@@ -137,8 +137,6 @@ def extendArc(arcPoints, radius, stepDegree, numExtraPoints=20):
         arcPoints.append((x, y, heading))
     return arcPoints
 
-# Rest of adjustArcEntry, adjustArcExit, smoothPathTurningRadius, and main unchanged
-
 def adjustArcEntry(previousArc, currentArc, radius, stepDegree, maxAttempts=5, extraPointsPerAttempt=20):
     if not previousArc or not currentArc:
         return currentArc
