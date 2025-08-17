@@ -324,5 +324,4 @@ def main():
     print(f"Coverage path saved to: {outputCsv}")
 
 if __name__ == "__main__":
-
     main()
