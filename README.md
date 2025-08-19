@@ -37,7 +37,6 @@ This repository contains software for the Astrobotic rover, developed as part of
 
 #### Heading Conventions
 By default, heading inputs are converted from compass convention (0° = North, CW+) to math convention (0 = +X, CCW+). Edit this conversion if your input uses a different heading format.
-
 ```
 cameraHeading = compassDegToMathRad(float(headingStr))
 ```
@@ -93,7 +92,6 @@ Four example coverage paths are provided in the `examples/` folder for testing t
 - `coverage_path_large_h.csv` - 7m × 3m sideways H
 
 Each path starts at the top-left corner.
-
 <table>
   <tr>
     <th align="center">Square Coverage Path</th>
