@@ -163,3 +163,7 @@ Each path starts at the top-left corner.
     </td>
   </tr>
 </table>
+
+## License  
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
