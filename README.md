@@ -3,7 +3,7 @@
 ## Overview
 This repository contains software for the Astrobotic rover, developed as part of the NASA Deep Contact Graph Routing (DCGR) for Lunar Operations project, providing manual rover control via a Bluetooth controller and autonomous navigation along a coverage path. It includes all components needed for autonomous operation, such as elevation map creation from LiDAR data, traversability binary map generation, and coverage path planning.
 
-This work contributed to and was published in: [RadioLunaDiff: Estimation of Wireless Network Signal Strength in Lunar Terrain](https://radiolunadiff.github.io).
+This work contributed to the paper: [RadioLunaDiff: Estimation of Wireless Network Signal Strength in Lunar Terrain](https://radiolunadiff.github.io).
 
 ## Features
 - **Manual Control** - Skid-steer driving with PS4 controller input.
