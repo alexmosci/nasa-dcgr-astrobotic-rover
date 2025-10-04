@@ -5,6 +5,8 @@ This repository contains software for the Astrobotic rover, developed as part of
 
 This work contributed to the paper: [RadioLunaDiff: Estimation of Wireless Network Signal Strength in Lunar Terrain](https://radiolunadiff.github.io).
 
+A summary of this work is available in my presentation: [NASA DCGR Project End of Internship Presentation (PDF)](docs/presentation.pdf).
+
 ## Features
 - **Manual Control** - Skid-steer driving with PS4 controller input.
 - **Autonomous Control** - Drives the rover along generated coverage paths through map-based navigation.
