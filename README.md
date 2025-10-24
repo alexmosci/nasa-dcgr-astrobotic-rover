@@ -168,6 +168,5 @@ Each path starts at the top-left corner.
   </tr>
 </table>
 
-## License  
-
+## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
